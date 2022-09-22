@@ -26,7 +26,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final prayers = ref.watch(prayersProviderProvider);
+    final prayers = ref.watch(prayersProviderProvider(ref.watch(dateProvider)));
     return Directionality(
       textDirection: TextDirection.rtl,
       child: Scaffold(

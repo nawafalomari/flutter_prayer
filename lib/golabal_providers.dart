@@ -5,9 +5,9 @@ import 'package:prayer_flutter/domain/repos/prayer_repo.dart';
 ///
 /// This provider will get the prayers time from the api
 ///
-final prayersProviderProvider = FutureProvider<PrayerDay>((ref) async {
+final prayersProviderProvider = FutureProvider.family<PrayerDay, DateTime>((ref, date) async {
   /// TODO: remove the hardcoded Dammam when the city name feature is impelmented
-  return ref.read(prayerRepoProvider).getPrayersForDayCity(ref.watch(dateProvider), 'Dammam');
+  return ref.read(prayerRepoProvider).getPrayersForDayCity(date, 'Dammam');
 });
 
 ///
