@@ -12,6 +12,7 @@ final prayerRepoProvider = Provider<PrayerRepo>((ref) {
 });
 
 class PrayerRepo {
+  /// This method will return a [PrayerDay] just pass the day and the city name
   Future<PrayerDay> getPrayersForDayCity(DateTime day, String cityName) async {
     try {
       final fullUrl = UrlConstants.prayerUrl
